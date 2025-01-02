@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarKrypt Diary - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome to DarKrypt Diary</h1>
+        </header>
+
+        <section class="intro">
+            <h2>About DarKrypt Diary</h2>
+            <p>
+                DarKrypt Diary is a personal encrypted diary app that allows you to securely store your private messages,
+                thoughts, and notes. Each entry is encrypted with the Vigenère cipher, ensuring that your data remains
+                safe and protected. 
+            </p>
+            <p>
+                Features:
+                <ul>
+                    <li>Create, edit, and view encrypted diary entries.</li>
+                    <li>Each note is encrypted with a unique cipher key.</li>
+                    <li>Decrypt your notes whenever you need them, keeping your secrets safe.</li>
+                    <li>Login and manage your encrypted notes.</li>
+                </ul>
+            </p>
+        </section>
+
+        <section class="actions">
+            <p><a href="{{ url_for('login') }}">Login</a></p>
+            <p><a href="{{ url_for('signup') }}">Sign Up</a></p>
+        </section>
+    </div>
+</body>
+</html>

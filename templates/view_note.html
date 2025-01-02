@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='viewstyles.css') }}">
+    <title>{{ note['heading'] }}</title>
+</head>
+<body>
+    <h2>{{ note['heading'] }}</h2>
+    <p><strong>Encrypted Message:</strong> {{ note['message'] }}</p>
+
+    <form method="POST">
+        <label for="table_key">Table Key:</label>
+        <input type="text" name="table_key" required><br><br>
+
+        <label for="cipher_key">Cipher Key:</label>
+        <input type="text" name="cipher_key" required><br><br>
+
+        <button type="submit">Decrypt</button>
+    </form>
+
+    {% if decrypted_message %}
+        <h3>Decrypted Message:</h3>
+        <p>{{ decrypted_message }}</p>
+    {% endif %}
+
+    <p><a href="{{ url_for('dashboard') }}">Back to Dashboard</a></p>
+</body>
+</html>

@@ -1,0 +1,95 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: black;
+    color: white;
+    line-height: 1.5;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: white;  /* White text */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3); /* Subtle white shadow */
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid white; /* White border for contrast */
+    background-color: black;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Soft white shadow */
+}
+
+header h1 {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.intro {
+    margin-top: 20px;
+}
+
+.intro h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-align: center;
+    color: white; /* White color */
+}
+
+.intro p, .intro ul {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #CCCCCC; /* Light gray for paragraph text */
+}
+
+.intro ul {
+    list-style-type: square;
+    margin-left: 20px;
+}
+
+.actions {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.actions p {
+    margin: 10px;
+    font-size: 1.2rem;
+}
+
+.actions a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 2px solid white; /* White border for the button */
+    border-radius: 5px;
+    margin: 0 10px;
+    text-transform: uppercase;
+    background-color: black; /* Black background */
+}
+
+.actions a:hover {
+    background-color: white; /* White background on hover */
+    color: black; /* Black text on hover */
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Subtle glow on hover */
+}
+
+/* Additional styles for cryptic effect */
+.container {
+    border-style: dashed;
+    background-color: black;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+p, ul {
+    font-size: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+}
