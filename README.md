@@ -62,11 +62,3 @@ DarKrypt Diary is a personal encrypted diary application that allows users to se
 ## Contributing
 
 Contributions are welcome. Feel free to submit pull requests or report issues in the repository.
-
-## License
-
-This project is licensed under the MIT License.
-
----
-
-*Note: This README is based on the information available on the DarKrypt Diary website as of March 1, 2025.* 
