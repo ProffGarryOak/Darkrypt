@@ -1,0 +1,157 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: black;
+    color: white;
+    line-height: 1.5;
+    padding: 20px;
+}
+
+h2, h3 {
+    color: white;
+    text-align: center;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3); /* Subtle text shadow */
+}
+
+form {
+    background-color: black;
+    color: white;
+    border: 2px dashed white;
+    padding: 20px;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Subtle glow */
+}
+
+label {
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 10px;
+    color: #CCCCCC; /* Light gray color */
+}
+
+input, textarea {
+    background-color: black;
+    color: white;
+    border: 1px solid #CCCCCC;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+}
+
+input:focus, textarea:focus {
+    border-color: white;
+    outline: none;
+}
+
+button {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: 2px solid white;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: uppercase;
+    width: 100%;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+    border-color: black;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Glowing effect */
+}
+
+h3 {
+    margin-top: 30px;
+    text-align: center;
+}
+
+ul {
+    list-style-type: rows;
+    margin-top: 20px;
+    padding-left: 0;
+}
+
+ul li {
+    margin: 10px 0;
+    text-align: center;
+}
+
+ul li a {
+    text-decoration: none;
+    color: white;
+    border: 2px solid white;
+    padding: 10px;
+    text-transform: uppercase;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+ul li a:hover {
+    background-color: white;
+    color: black;
+    border-color: black;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Glowing effect */
+}
+
+form button[type="submit"] {
+    width: auto;
+    margin-top: 20px;
+}
+
+/* Logout button */
+form[action="{{ url_for('logout') }}"] {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Saved Notes - Equal Size Rectangles Side by Side */
+.saved-notes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px; /* Space between notes */
+    margin-top: 30px;
+}
+
+.saved-note {
+    
+    text-align: center;
+    font-size: 1.1rem;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); /* Subtle glow */
+    transition: transform 0.3s ease;
+}
+
+.saved-note:hover {
+    transform: scale(1.05); /* Slight scale on hover */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Glowing effect on hover */
+}
+
+.saved-note a {
+    color: white;
+    text-decoration: none;
+    border: 2px solid white;
+    padding: 5px;
+    font-size: 1rem;
+    display: inline-block;
+    margin-top: 10px;
+    text-transform: uppercase;
+}   
+
+.saved-note a:hover {
+    background-color: white;
+    color: black;
+    border-color: black;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Glowing effect */
+}

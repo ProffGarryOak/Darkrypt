@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vigenère Cipher - DarKrypt Diary</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="/dashboard">
+                    <i class="fas fa-lock"></i>
+                    <span>DarKrypt<span class="logo-highlight">Diary</span></span>
+                </a>
+            </div>
+            <div class="navbar-menu">
+                <div class="navbar-links">
+                    
+                    <a href="#" class="active">Vigenère Cipher</a>
+                </div>
+                <div class="navbar-actions">
+                    <form action="/logout" method="POST">
+                        <button type="submit" class="btn btn-outline">Logout</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="cipher-container">
+        <div class="container">
+            <div class="cipher-header">
+                <h1><i class="fas fa-key"></i> Vigenère Cipher</h1>
+                <p>Encrypt or decrypt your messages using the Vigenère cipher algorithm</p>
+            </div>
+
+            <div class="cipher-card">
+                <form method="POST" class="cipher-form">
+                    <div class="form-group">
+                        <label for="heading">Note Heading</label>
+                        <input type="text" id="heading" name="heading" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="table_key">Table Key</label>
+                            <input type="text" id="table_key" name="table_key" required>
+                            <small class="form-hint">Used for the cipher table</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="cipher_key">Cipher Key</label>
+                            <input type="text" id="cipher_key" name="cipher_key" required>
+                            <small class="form-hint">Used to encrypt/decrypt</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-lock"></i> Process Message
+                    </button>
+                </form>
+
+                {% if result %}
+                <div class="result-container">
+                    <h3><i class="fas fa-lock-open"></i> Result:</h3>
+                    <div class="result-box">
+                        <pre>{{ result }}</pre>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="saved-notes-section">
+                <h2><i class="fas fa-bookmark"></i> Your Saved Notes</h2>
+                {% if notes %}
+                <div class="notes-grid">
+                    {% for note in notes %}
+                    <div class="note-card">
+                        <h3>{{ note['heading'] }}</h3>
+                        <div class="note-actions">
+                            <a href="{{ url_for('view_note', note_id=note['_id']) }}" class="btn btn-outline btn-small">
+                                <i class="fas fa-eye"></i> View
+                            </a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div class="empty-state">
+                    <i class="fas fa-book-open"></i>
+                    <p>No saved notes yet. Process a message to save your first note!</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarKrypt Diary - Secure Encrypted Journal</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="/">
+                    <i class="fas fa-lock"></i>
+                    <span>DarKrypt<span class="logo-highlight">Diary</span></span>
+                </a>
+            </div>
+            <div class="navbar-menu">
+                <div class="navbar-links">
+                    <a href="/" class="active">Home</a>
+                    <a href="#features">Features</a>
+                    <a href="#how-it-works">How It Works</a>
+                </div>
+                <div class="navbar-actions">
+                    <a href="/login" class="btn btn-outline">Login</a>
+                    <a href="/signup" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+            <button class="navbar-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Your Private Thoughts,<br>Securely <span class="text-gradient">Encrypted</span></h1>
+                <p class="hero-subtitle">DarKrypt Diary uses Vigenère cipher encryption to protect your personal journal entries.</p>
+                <div class="hero-actions">
+                    <a href="/signup" class="btn btn-primary btn-large">Start Journaling Free</a>
+                    <a href="/login" class="btn btn-outline btn-large">Existing User? Login</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="diary-mockup">
+                    <div class="mockup-header">
+                        <div class="mockup-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="mockup-content">
+                        <div class="encrypted-text">VGhpcyBpcyBhbiBlbmNyeXB0ZWQgbWVzc2FnZQ==</div>
+                        <div class="mockup-footer">
+                            <i class="fas fa-lock"></i> Secured with Vigenère Cipher
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose <span class="text-gradient">DarKrypt</span></h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3>Vigenère Encryption</h3>
+                    <p>Military-grade cipher algorithm to protect your private thoughts.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <h3>Complete Privacy</h3>
+                    <p>Only you hold the encryption key to your personal diary.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Access Anywhere</h3>
+                    <p>View and edit your encrypted notes from any device.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How <span class="text-gradient">DarKrypt</span> Works</h2>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Create Your Account</h3>
+                        <p>Sign up to get started with your secure encrypted diary.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Write & Encrypt</h3>
+                        <p>Compose your thoughts and encrypt them with your secret key.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Secure Storage</h3>
+                        <p>Your encrypted entries are safely stored in your personal dashboard.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Decrypt When Needed</h3>
+                        <p>Access your private thoughts anytime by decrypting with your key.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-card">
+                <h2>Ready to Secure Your Thoughts?</h2>
+                <p>Join our community of privacy-conscious users today.</p>
+                <div class="cta-actions">
+                    <a href="/signup" class="btn btn-primary btn-large">Get Started - It's Free</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-lock"></i>
+                        <span>DarKrypt<span class="logo-highlight">Diary</span></span>
+                    </div>
+                    <p>Your secure digital journal. Encrypted end-to-end for maximum privacy.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/signup">Sign Up</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    &copy; 2025 DarKrypt Diary. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

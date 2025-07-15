@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ note['heading'] }} - DarKrypt Diary</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="/dashboard">
+                    <i class="fas fa-lock"></i>
+                    <span>DarKrypt<span class="logo-highlight">Diary</span></span>
+                </a>
+            </div>
+            <div class="navbar-menu">
+                <div class="navbar-links">
+                    <a href="/dashboard">Dashboard</a>
+                </div>
+                <div class="navbar-actions">
+                    <form action="/logout" method="POST">
+                        <button type="submit" class="btn btn-outline">Logout</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="view-note-container">
+        <div class="container">
+            <div class="view-note-header">
+                <a href="/dashboard" class="back-link">
+                    <i class="fas fa-arrow-left"></i> Back to Dashboard
+                </a>
+                <h1>{{ note['heading'] }}</h1>
+                
+            </div>
+
+            <div class="view-note-content">
+                <div class="encrypted-section">
+                    <h2><i class="fas fa-lock"></i> Encrypted Content</h2>
+                    <div class="encrypted-message">
+                        <pre>{{ note['message'] }}</pre>
+                    </div>
+                </div>
+
+                <div class="decrypt-form-section">
+                    <h2><i class="fas fa-key"></i> Decrypt Message</h2>
+                    <form method="POST" class="decrypt-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="table_key">Table Key</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-table"></i>
+                                    <input type="text" id="table_key" name="table_key" placeholder="Enter your table key" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="cipher_key">Cipher Key</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-key"></i>
+                                    <input type="text" id="cipher_key" name="cipher_key" placeholder="Enter your cipher key" required>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-unlock"></i> Decrypt Message
+                        </button>
+                    </form>
+                </div>
+
+                {% if decrypted_message %}
+                <div class="decrypted-section">
+                    <h2><i class="fas fa-lock-open"></i> Decrypted Message</h2>
+                    <div class="decrypted-message">
+                        <pre>{{ decrypted_message }}</pre>
+                    </div>
+                    <div class="copy-section">
+                        <button class="btn btn-outline copy-btn" onclick="copyToClipboard()">
+                            <i class="fas fa-copy"></i> Copy to Clipboard
+                        </button>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+
+    <script src="/static/js/script.js"></script>
+    <script>
+        function copyToClipboard() {
+            const decryptedText = document.querySelector('.decrypted-message pre').textContent;
+            navigator.clipboard.writeText(decryptedText).then(() => {
+                const copyBtn = document.querySelector('.copy-btn');
+                copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                setTimeout(() => {
+                    copyBtn.innerHTML = '<i class="fas fa-copy"></i> Copy to Clipboard';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
